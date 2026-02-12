@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import './index.css'
 import App from './App.jsx'
 import Sha256Hasing from '../componenets/Sha256Hasing.jsx';
-import HexToAscii from '../componenets/HextoASCII.jsx';
+import HexToAscii from '../componenets/HexToAscii.jsx';
 
 export const route = createBrowserRouter([
   {
