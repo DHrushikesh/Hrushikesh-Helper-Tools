@@ -6,6 +6,7 @@ function App() {
        <nav >
           <Link className="text-2xl hover:bg-green-400 border border-black rounded-lg px-1" to="/sha256">SHA256</Link> |{" "}
           <Link className="text-2xl hover:bg-green-400 border border-black rounded-lg px-1" to="/hash">Hex → ASCII</Link>
+          <Link className="text-2xl hover:bg-green-400 border border-black rounded-lg px-1" to="/json-schema">Json Schema Generator</Link>
         </nav>
       <hr />
       <Outlet />
