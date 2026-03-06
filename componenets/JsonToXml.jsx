@@ -1,10 +1,12 @@
 import { useState } from 'react';
 import xml2js from 'xml2js';
+import { Link } from 'react-router-dom';
 
 function JsonToXml() {
   const [jsonInput, setJsonInput] = useState('');
   const [xmlOutput, setXmlOutput] = useState('');
   const [error, setError] = useState('');
+
 
   const handleConvert = async () => {
     try {
@@ -42,7 +44,9 @@ function JsonToXml() {
             placeholder="Paste your JSON here..."
           />
         </div>
-
+        <Link className='flex justify-center items-center '  to="/xml-json">
+        <button type="button" className='cursor-pointer border-2 border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white'>Invert</button>
+        </Link>
         <div className="flex-1">
           <label className="block text-lg font-semibold mb-2">XML Output:</label>
           <textarea

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import xml2js from 'xml2js';
+import { Link } from 'react-router-dom';
 
 function XmlToJson() {
   const [xmlInput, setXmlInput] = useState('');
@@ -41,6 +42,10 @@ function XmlToJson() {
             placeholder="Paste your XML here..."
           />
         </div>
+
+        <Link className='flex justify-center items-center '  to="/json-xml">
+        <button type="button" className='cursor-pointer border-2 border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white'>Invert</button>
+        </Link>
 
         <div className="flex-1">
           <label className="block text-lg font-semibold mb-2">JSON Output:</label>
