@@ -31,61 +31,61 @@ function JsonToXml() {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center w-full p-4">
-      <h1 className="text-3xl font-bold text-purple-800 mb-4">JSON to XML</h1>
+    <div className="flex flex-col items-center justify-center w-full p-4 bg-gradient-to-b from-slate-900 to-gray-900 min-h-screen">
+      <h1 className="text-3xl font-bold text-cyan-400 mb-4">JSON to XML</h1>
 
       <div className="flex gap-4 w-full max-w-4xl">
         <div className="flex-1">
-          <label className="block text-lg font-semibold mb-2">
+          <label className="block text-lg font-semibold mb-2 text-cyan-300">
             JSON Input:
           </label>
           <textarea
             value={jsonInput}
             onChange={(e) => setJsonInput(e.target.value)}
-            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm"
+            className="w-full h-84 p-3 border-2 border-cyan-500 rounded-lg font-mono text-sm bg-gray-800 text-cyan-300"
             placeholder="Paste your JSON here..."
           />
         </div>
         <Link className="flex justify-center items-center " to="/xml-json">
           <button
             type="button"
-            className="cursor-pointer border-2 text-2xl border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white"
+            className="cursor-pointer border-2 text-2xl border-cyan-600 h-fit rounded-2xl mx p-2 bg-cyan-700 hover:bg-cyan-600 text-white transition"
           >
             <FaRetweet />
           </button>
         </Link>
         <div className="flex-1">
-          <label className="block text-lg font-semibold mb-2">
+          <label className="block text-lg font-semibold mb-2 text-cyan-300">
             XML Output:
           </label>
           <textarea
             value={xmlOutput}
             readOnly
-            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm bg-gray-100"
+            className="w-full h-84 p-3 border-2 border-cyan-500 rounded-lg font-mono text-sm bg-gray-800 text-cyan-300"
             placeholder="XML output will appear here..."
           />
         </div>
       </div>
 
-      {error && <p className="text-red-500 mt-2 font-semibold">{error}</p>}
+      {error && <p className="text-red-400 mt-2 font-semibold">{error}</p>}
 
       <div className="flex gap-3 mt-4">
         <button
           onClick={handleConvert}
-          className="px-6 py-2 bg-green-500 text-white font-bold rounded-lg hover:bg-green-600"
+          className="px-6 py-2 bg-cyan-700 text-white font-bold rounded-lg hover:bg-cyan-600 transition"
         >
           Convert
         </button>
         <button
           onClick={handleCopy}
           disabled={!xmlOutput}
-          className="px-6 py-2 bg-blue-500 text-white font-bold rounded-lg hover:bg-blue-600 disabled:opacity-50"
+          className="px-6 py-2 bg-cyan-700 text-white font-bold rounded-lg hover:bg-cyan-600 transition disabled:opacity-50"
         >
           Copy
         </button>
         <button
           onClick={handleClear}
-          className="px-6 py-2 bg-red-500 text-white font-bold rounded-lg hover:bg-red-600"
+          className="px-6 py-2 bg-cyan-700 text-white font-bold rounded-lg hover:bg-cyan-600 transition"
         >
           Clear
         </button>

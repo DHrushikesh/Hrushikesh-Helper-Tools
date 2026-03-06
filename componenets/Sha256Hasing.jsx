@@ -20,10 +20,11 @@ function Sha256Hashing() {
         setTimeout(() => setCopied(false), 2000);
     };
     return (
-        <div style={{ maxWidth: "1000px", margin: "20px auto" }}>
-            <h3 className="inline">SHA-256 Hash Generator</h3>
+        <div className="w-full min-h-screen bg-gradient-to-b from-slate-900 to-gray-900 p-4 flex flex-col items-center justify-start pt-20">
+            <h3 className="inline text-cyan-400 text-2xl mb-4">SHA-256 Hash Generator</h3>
+            <div style={{ maxWidth: "1000px", width: "100%" }}>
             <textarea
-                className="border-2 border-black rounded-lg"
+                className="border-2 border-cyan-500 rounded-lg bg-gray-800 text-cyan-300"
                 rows="4"
                 placeholder="Enter text..."
                 value={input}
@@ -33,27 +34,28 @@ function Sha256Hashing() {
             <button
                 onClick={generateHash}
                 style={{ marginTop: "10px", padding: "6px 12px" }}
-                className="text-center bg-gray-400 border-2 rounded-l p-1"
+                className="text-center bg-cyan-700 hover:bg-cyan-600 text-white border-2 border-cyan-500 rounded-l p-1 transition"
             >
                 Generate Hash
             </button>
             {hash && (
                 <button onClick={copyToClipboard}
                     style={{ marginTop: "10px", padding: "6px 12px" }}
-                    className="text-center bg-gray-400 border-2 ml-3 rounded-l p-1"
+                    className="text-center bg-cyan-700 hover:bg-cyan-600 text-white border-2 border-cyan-500 ml-3 rounded-l p-1 transition"
                 >
                     {copied ? "Copied ✅" : "Copy Output"}
                 </button>
             )}
             {hash && (
                 <div style={{ marginTop: "10px" }}>
-                    <strong>SHA-256:</strong>
-                    <pre style={{ background: "#f4f4f4", padding: "10px" }}>
+                    <strong className="text-cyan-300">SHA-256:</strong>
+                    <pre style={{ background: "#1e293b", padding: "10px", color: "#06b6d4", borderRadius: "4px" }}>
                         {hash}
                     </pre>
 
                 </div>
             )}
+            </div>
         </div>
     );
 }

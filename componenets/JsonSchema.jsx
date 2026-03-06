@@ -33,11 +33,13 @@ const JsonToSchema = () => {
     };
 
     return (
-        <div style={{ maxWidth: "1000px", margin: "20px auto" }}>
-            <h3>JSON to JSON Schema Generator</h3>
+        <div className="w-full min-h-screen bg-gradient-to-b from-slate-900 to-gray-900 p-4 flex flex-col items-center justify-start pt-20">
+            <h3 className="text-cyan-400 text-2xl mb-4">JSON to JSON Schema Generator</h3>
+
+            <div style={{ maxWidth: "1000px", width: "100%" }}>
 
             <textarea
-                className="border-2 border-black rounded-lg"
+                className="border-2 border-cyan-500 rounded-lg bg-gray-800 text-cyan-300"
                 rows="8"
                 placeholder='Enter JSON (e.g. { "name": "John", "age": 30 })'
                 value={jsonInput}
@@ -48,7 +50,7 @@ const JsonToSchema = () => {
             <button
                 onClick={convertJsonToSchema}
                 style={{ marginTop: "10px", padding: "6px 12px" }}
-                className="text-center bg-gray-400 border-2 rounded-l p-1"
+                className="text-center bg-cyan-700 hover:bg-cyan-600 text-white border-2 border-cyan-500 rounded-l p-1 transition"
             >
                 Generate Schema
             </button>
@@ -57,7 +59,7 @@ const JsonToSchema = () => {
                 <button
                     onClick={copyToClipboard}
                     style={{ marginTop: "10px", padding: "6px 12px" }}
-                    className="text-center bg-gray-400 border-2 ml-3 rounded-l p-1"
+                    className="text-center bg-cyan-700 hover:bg-cyan-600 text-white border-2 border-cyan-500 ml-3 rounded-l p-1 transition"
                 >
                     {copied ? "Copied ✅" : "Copy Output"}
                 </button>
@@ -65,15 +67,16 @@ const JsonToSchema = () => {
 
             {schemaOutput && (
                 <div style={{ marginTop: "10px" }}>
-                    <strong>Generated Schema:</strong>
+                    <strong className="text-cyan-300">Generated Schema:</strong>
                     <pre
-                        className="border border-green-500"
+                        className="border border-cyan-600"
                         style={{
-                            background: "#f4f4f4",
+                            background: "#1e293b",
                             padding: "10px",
                             borderRadius: "4px",
                             whiteSpace: "pre-wrap",
-                            overflow: "scroll"
+                            overflow: "scroll",
+                            color: "#06b6d4"
                         }}
                     >
                         {schemaOutput}
@@ -82,10 +85,11 @@ const JsonToSchema = () => {
             )}
 
             {error && (
-                <div style={{ marginTop: "10px", color: "red" }}>
+                <div style={{ marginTop: "10px", color: "#f87171" }}>
                     {error}
                 </div>
             )}
+            </div>
         </div>
     );
 };

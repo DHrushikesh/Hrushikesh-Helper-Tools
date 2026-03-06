@@ -20,7 +20,7 @@ export default function Praveen() {
   }, [showImage, navigate]);
 
   return (
-    <div className="w-full h-screen flex items-center justify-center ">
+    <div className="w-full h-screen flex items-center justify-center bg-gradient-to-b from-slate-900 to-gray-900">
       <img
         src={showImage === 'praveen' ? '/Praveen.png' : '/image.png'}
         alt="Praveen"
