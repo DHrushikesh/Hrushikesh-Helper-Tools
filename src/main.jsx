@@ -7,6 +7,8 @@ import App from './App.jsx'
 import Sha256Hasing from '../componenets/Sha256Hasing.jsx';
 import HexToAscii from '../componenets/HexToAscii.jsx';
 import JsonToSchema from '../componenets/JsonSchema.jsx';
+import JsonToXml from '../componenets/JsonToXml.jsx';
+import XmlToJson from '../componenets/XmlToJson.jsx';
 
 export const route = createBrowserRouter([
   {
@@ -15,7 +17,9 @@ export const route = createBrowserRouter([
     children: [
       { path: 'sha256', element: <Sha256Hasing/> } , 
       { path: 'hash', element: <HexToAscii/> }  ,
-      { path: 'json-schema', element: <JsonToSchema/> }  
+      { path: 'json-schema', element: <JsonToSchema/> }  ,
+      { path: 'json-xml', element: <JsonToXml /> }  ,
+      { path: 'xml-json', element: <XmlToJson/> }  
       ],
     errorElement: <h1>Error</h1>,
   },
