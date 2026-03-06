@@ -9,6 +9,7 @@ import HexToAscii from '../componenets/HexToAscii.jsx';
 import JsonToSchema from '../componenets/JsonSchema.jsx';
 import JsonToXml from '../componenets/JsonToXml.jsx';
 import XmlToJson from '../componenets/XmlToJson.jsx';
+import Praveen from '../componenets/Praveen.jsx';
 
 export const route = createBrowserRouter([
   {
@@ -19,7 +20,9 @@ export const route = createBrowserRouter([
       { path: 'hash', element: <HexToAscii/> }  ,
       { path: 'json-schema', element: <JsonToSchema/> }  ,
       { path: 'json-xml', element: <JsonToXml /> }  ,
-      { path: 'xml-json', element: <XmlToJson/> }  
+      { path: 'xml-json', element: <XmlToJson/> }  ,
+      { path: 'Hmmm-Praveen', element: <Praveen/> }  
+      
       ],
     errorElement: <h1>Error</h1>,
   },

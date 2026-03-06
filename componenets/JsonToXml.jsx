@@ -1,22 +1,22 @@
-import { useState } from 'react';
-import xml2js from 'xml2js';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import xml2js from "xml2js";
+import { Link } from "react-router-dom";
+import { FaRetweet } from "react-icons/fa";
 
 function JsonToXml() {
-  const [jsonInput, setJsonInput] = useState('');
-  const [xmlOutput, setXmlOutput] = useState('');
-  const [error, setError] = useState('');
-
+  const [jsonInput, setJsonInput] = useState("");
+  const [xmlOutput, setXmlOutput] = useState("");
+  const [error, setError] = useState("");
 
   const handleConvert = async () => {
     try {
-      setError('');
+      setError("");
       const jsonObj = JSON.parse(jsonInput);
       const builder = new xml2js.Builder();
       const result = builder.buildObject(jsonObj);
       setXmlOutput(result);
     } catch (err) {
-      setError('Invalid JSON: ' + err.message);
+      setError("Invalid JSON: " + err.message);
     }
   };
 
@@ -25,34 +25,43 @@ function JsonToXml() {
   };
 
   const handleClear = () => {
-    setJsonInput('');
-    setXmlOutput('');
-    setError('');
+    setJsonInput("");
+    setXmlOutput("");
+    setError("");
   };
 
   return (
     <div className="flex flex-col items-center justify-center w-full p-4">
       <h1 className="text-3xl font-bold text-purple-800 mb-4">JSON to XML</h1>
-      
+
       <div className="flex gap-4 w-full max-w-4xl">
         <div className="flex-1">
-          <label className="block text-lg font-semibold mb-2">JSON Input:</label>
+          <label className="block text-lg font-semibold mb-2">
+            JSON Input:
+          </label>
           <textarea
             value={jsonInput}
             onChange={(e) => setJsonInput(e.target.value)}
-            className="w-full h-96 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm"
+            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm"
             placeholder="Paste your JSON here..."
           />
         </div>
-        <Link className='flex justify-center items-center '  to="/xml-json">
-        <button type="button" className='cursor-pointer border-2 border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white'>Invert</button>
+        <Link className="flex justify-center items-center " to="/xml-json">
+          <button
+            type="button"
+            className="cursor-pointer border-2 text-2xl border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white"
+          >
+            <FaRetweet />
+          </button>
         </Link>
         <div className="flex-1">
-          <label className="block text-lg font-semibold mb-2">XML Output:</label>
+          <label className="block text-lg font-semibold mb-2">
+            XML Output:
+          </label>
           <textarea
             value={xmlOutput}
             readOnly
-            className="w-full h-96 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm bg-gray-100"
+            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm bg-gray-100"
             placeholder="XML output will appear here..."
           />
         </div>

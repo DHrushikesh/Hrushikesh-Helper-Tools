@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import xml2js from 'xml2js';
 import { Link } from 'react-router-dom';
+import { FaRetweet } from "react-icons/fa";
 
 function XmlToJson() {
   const [xmlInput, setXmlInput] = useState('');
@@ -38,13 +39,15 @@ function XmlToJson() {
           <textarea
             value={xmlInput}
             onChange={(e) => setXmlInput(e.target.value)}
-            className="w-full h-96 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm"
+            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm"
             placeholder="Paste your XML here..."
           />
         </div>
 
         <Link className='flex justify-center items-center '  to="/json-xml">
-        <button type="button" className='cursor-pointer border-2 border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white'>Invert</button>
+        <button type="button" className='cursor-pointer border-2 text-2xl border-teal-700 h-fit rounded-2xl mx p-2 bg-teal-600 text-white'>
+          <FaRetweet />
+        </button>
         </Link>
 
         <div className="flex-1">
@@ -52,7 +55,7 @@ function XmlToJson() {
           <textarea
             value={jsonOutput}
             readOnly
-            className="w-full h-96 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm bg-gray-100"
+            className="w-full h-84 p-3 border-2 border-gray-300 rounded-lg font-mono text-sm bg-gray-100"
             placeholder="JSON output will appear here..."
           />
         </div>

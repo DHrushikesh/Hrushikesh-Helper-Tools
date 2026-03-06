@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PiRainbowCloudFill } from "react-icons/pi";
 function Sha256Hashing() {
     const [input, setInput] = useState("");
     const [hash, setHash] = useState("");
@@ -20,7 +21,7 @@ function Sha256Hashing() {
     };
     return (
         <div style={{ maxWidth: "1000px", margin: "20px auto" }}>
-            <h3>SHA-256 Hash Generator</h3>
+            <h3 className="inline">SHA-256 Hash Generator</h3>
             <textarea
                 className="border-2 border-black rounded-lg"
                 rows="4"
