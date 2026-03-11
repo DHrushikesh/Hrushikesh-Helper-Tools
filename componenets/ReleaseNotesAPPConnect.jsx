@@ -55,7 +55,7 @@ export default function ReleaseNotesAPPConnect() {
 
       const fetchResponse = await fetch(`${apicall}`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "text/plain" },
         body: JSON.stringify(payload)
       });
 
