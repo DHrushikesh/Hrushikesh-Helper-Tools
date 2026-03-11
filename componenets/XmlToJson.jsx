@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import xml2js from 'xml2js';
+import { XMLParser } from 'fast-xml-parser';
 import { Link } from 'react-router-dom';
 import { FaRetweet } from "react-icons/fa";
 
@@ -8,11 +8,11 @@ function XmlToJson() {
   const [jsonOutput, setJsonOutput] = useState('');
   const [error, setError] = useState('');
 
-  const handleConvert = async () => {
+  const handleConvert = () => {
     try {
       setError('');
-      const parser = new xml2js.Parser();
-      const result = await parser.parseStringPromise(xmlInput);
+      const parser = new XMLParser();
+      const result = parser.parse(xmlInput);
       setJsonOutput(JSON.stringify(result, null, 2));
     } catch (err) {
       setError('Invalid XML: ' + err.message);
