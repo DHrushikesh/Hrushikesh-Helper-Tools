@@ -10,6 +10,7 @@ import JsonToSchema from '../componenets/JsonSchema.jsx';
 import JsonToXml from '../componenets/JsonToXml.jsx';
 import XmlToJson from '../componenets/XmlToJson.jsx';
 import Praveen from '../componenets/Praveen.jsx';
+import ReleaseNotesAPPConnect from '../componenets/ReleaseNotesAPPConnect.jsx';
 
 export const route = createBrowserRouter([
   {
@@ -21,6 +22,7 @@ export const route = createBrowserRouter([
       { path: 'json-schema', element: <JsonToSchema/> }  ,
       { path: 'json-xml', element: <JsonToXml /> }  ,
       { path: 'xml-json', element: <XmlToJson/> }  ,
+      { path: 'release-notes-appconnect', element: <ReleaseNotesAPPConnect/> }  ,
       { path: 'Hmmm-Praveen', element: <Praveen/> }  
       
       ],

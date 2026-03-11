@@ -12,6 +12,7 @@ function App() {
           <Link className="text-2xl text-cyan-300 hover:bg-cyan-700 hover:text-white border-2 border-cyan-500 rounded-lg px-2 transition" to="/json-schema">Json Schema Generator</Link>
           <Link className="text-2xl text-cyan-300 hover:bg-cyan-700 hover:text-white border-2 border-cyan-500 rounded-lg px-2 transition" to="/json-xml">JSON-XML</Link>
           <Link className="text-2xl text-cyan-300 hover:bg-cyan-700 hover:text-white border-2 border-cyan-500 rounded-lg px-2 transition" to="/xml-json">XML-JSON</Link>
+          <Link className="text-2xl text-cyan-300 hover:bg-cyan-700 hover:text-white border-2 border-cyan-500 rounded-lg px-2 transition" to="/release-notes-appconnect">Release Notes ESB</Link>
           {/* <Link className="text-2xl text-cyan-300 hover:bg-cyan-700 hover:text-white border-2 border-cyan-500 rounded-lg px-2 transition" to="/Hmmm-Praveen"> */}
             {/* <PiRainbowCloudFill /></Link> */}
         </nav>
