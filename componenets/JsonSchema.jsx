@@ -8,17 +8,23 @@ const JsonToSchema = () => {
     const [copied, setCopied] = useState(false);
 
     const convertJsonToSchema = () => {
+        const trimmedInput = jsonInput.trim();
+        if (!trimmedInput) {
+            setError("Please enter valid JSON.");
+            return;
+        }
+
         try {
             setError("");
             setSchemaOutput("");
             setCopied(false);
 
-            const parsedJson = JSON.parse(jsonInput);
+            const parsedJson = JSON.parse(trimmedInput);
             const schema = generateSchema(parsedJson);
 
             setSchemaOutput(JSON.stringify(schema, null, 2));
         } catch (err) {
-            setError("Invalid JSON input",err);
+            setError("Invalid JSON input: " + err.message);
         }
     };
 
@@ -41,7 +47,7 @@ const JsonToSchema = () => {
             <textarea
                 className="border-2 border-cyan-500 rounded-lg bg-gray-800 text-cyan-300"
                 rows="8"
-                placeholder='Enter JSON (e.g. { "name": "John", "age": 30 })'
+                placeholder='Enter JSON (e.g. { "name": "John", "age": 30 } or [ { "name": "John" } ])'
                 value={jsonInput}
                 onChange={(e) => setJsonInput(e.target.value)}
                 style={{ width: "100%", padding: "8px" }}
